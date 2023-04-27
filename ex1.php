@@ -19,8 +19,9 @@
     <!-- Afficher les valeurs initiales -->
     <p>
         <?php
-            // Afficher les valeurs si elles existent
-            if(isset($_GET['numA']) && isset($_GET['numB'])){
+            // Afficher les valeurs si elles existent et ne sont pas vides
+            if(isset($_GET['numA']) && isset($_GET['numB'])
+                && !empty($_GET['numA']) && !empty($_GET['numB'])){
                 echo "Valeurs initiales : <br>";
                 echo "Nombre A = ".$_GET["numA"];
                 echo "<br>";
@@ -32,7 +33,8 @@
     <!-- Afficher les valeurs échangées -->
     <p>
         <?php
-            if(isset($_GET['numA']) && isset($_GET['numB'])){
+            if(isset($_GET['numA']) && isset($_GET['numB'])
+                && !empty($_GET['numA']) && !empty($_GET['numB'])){
                 $temp = $_GET['numB'];
                 $_GET['numB'] = $_GET['numA'];
                 $_GET['numA'] = $temp;

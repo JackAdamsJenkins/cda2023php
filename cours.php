@@ -313,6 +313,12 @@ $_POST["nomDeLaDonnee"]; // Méthode POST
 // Permet de tester si une variable existe
 // isset($maVariable)
 
+// Permet de tester si une variable est vide
+// empty($maVariable)
+
+// Tester si la variable n'est PAS vide
+// !empty($maVariable)
+
 
 ?>
 <!-- Fermeture de la balise PHP -->
