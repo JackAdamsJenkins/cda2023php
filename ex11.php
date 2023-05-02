@@ -46,9 +46,16 @@ composé de caractères spécifiques (par exemple, des astérisques).
                 // }
 
                 // Deuxième solution, avec une seul boucle
-                for($i = 1; $i <= $triangleSize; $i++) {
-                   echo str_repeat("*", $i) . "<br/>";
-                }
+                // for($i = 1; $i <= $triangleSize; $i++) {
+                //    echo str_repeat("*", $i) . "<br/>";
+                // }
+
+                // Troisième solution, avec une seul boucle
+                $line = "";
+                for($i = 0; $i <= $triangleSize; $i++) {
+                    $line .= "*";
+                    echo $line . "<br/>";
+                 }
             }
 
         ?>
