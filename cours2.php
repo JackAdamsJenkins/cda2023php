@@ -7,13 +7,13 @@
         - foreach (pour chaque)
 
     On va tester si le nombre 1 est supérieur au nombre 2
-    Si ce n'est pas le cas, on ajout 1 (on fait un incrémentation) au nombre 1
+    Si ce n'est pas le cas, on ajoute 1 (on fait une incrémentation) au nombre 1
     Et on test à nouveau
 
     La boucle for :
-        for(variable de compteur ; condition a tester ; modification du compteur){
-            // Instructions
-        }
+for(variable de compteur ; condition a tester ; modification du compteur){
+    // Instructions
+}
 */
 $nombre2 = 12;
 for($nombre1 = 8; $nombre1 < $nombre2; $nombre1++){
@@ -47,14 +47,14 @@ for($i = 0; $i <= 100; $i++){
     IMPORTANT : Bien faire attention à ce que la condition soit remplie à un moment
     Sinon, on tombe dans une boucle infinie = plantage du serveur
 
-    // Amorce (variable qui va servir à faire la condition)
-    $nb1 = 8;
+// Amorce (variable qui va servir à faire la condition)
+$nb1 = 8;
 
-    while(condition){
-        // instructions
+while(condition){
+    // instructions
 
-        // Modification de l'amorce (de la variable qui se trouve dans la condition)
-    }
+    // Modification de l'amorce (de la variable qui se trouve dans la condition)
+}
 
 */
 $nb1 = 8;
@@ -64,7 +64,7 @@ while($nb1 <= $nb2){
     echo "Le nombre 1 ($nb1) est inférieur au nombre 2 ($nb2) <br/>";
 
     // Incrémentation de la variable nb1
-    // $nb1++;
+    $nb1++;
 
     // équivalent à la ligne 65
     // $nb1 = $nb1 + 1;
@@ -107,11 +107,11 @@ while($i <= 100){ // Condition
 */
 
 /*
-    La boucle do...while s'exécute au moins une fois, quoi qu'il arrive
+La boucle do...while s'exécute au moins une fois, quoi qu'il arrive
 
-    do {
-        // instructions
-    } while(condition);
+do {
+    // instructions
+} while(condition);
 */
 
 // Afficher les nombres pairs
