@@ -121,11 +121,12 @@
     echo "Valeurs après permutation : A = $variableA, B = $variableB";
     echo "<br>";
 
-    // Permutation de valeurs sur les variables
+    // Technique de permutation de valeurs sur les variables
     [$variableA, $variableB] = [$variableB, $variableA];
     echo "Valeurs après nouvelle permutation : A = $variableA, B = $variableB";
     echo "<br>";
 
+    // Destructuration de valeurs sur un tableau
     $notes = array(
         "Jules" => 12,
         "Maxence" => 15,
@@ -133,17 +134,17 @@
         "Coumba" => 13
     );
 
-    // [$jules, $maxence, $seb, $coumba] = $notes;
-    // echo $jules; // Affichera 12
-    // echo "<br>";
-
-    // Afficher le contenu de "Seb"
-    $cle = "Seb";
-    echo $notes[$cle]; // Affichera 14
+    [$jules, $maxence, $seb, $coumba] = $notes;
+    echo $jules; // Affichera 12
     echo "<br>";
 
-    // Si on possède un tableau non associatif (avec des index)
-    // On peut utiliser $i avec une valeur qui change
+    // Afficher le contenu de "Seb"
+    // $cle = "Seb";
+    // echo $notes[$cle]; // Affichera 14
+    // echo "<br>";
+
+    // // Si on possède un tableau non associatif (avec des index)
+    // // On peut utiliser $i avec une valeur qui change
     // $i = 0;
     // $i = 1;
     // $i = 2;
@@ -223,22 +224,22 @@
             }
 
         ----------------------------
-            if(condition){
-                // instructions
-            } else {
-                // instructions
-            }
+if(condition){
+    // instructions
+} else {
+    // instructions
+}
         
         ----------------------------
-            if(condition){
-                // instructions
-            } elseif(condition){
-                // instructions
-            } elseif(condition){
-                // instructions
-            } else {
-                // instructions
-            }
+if(condition){
+    // instructions
+} elseif(condition){
+    // instructions
+} elseif(condition){
+    // instructions
+} else {
+    // instructions
+}
         
     */
     echo "<br>";
