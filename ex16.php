@@ -36,4 +36,105 @@ INFORMATIONS :
         - Ce sera utile pour ajouter au panier et pour éviter de dupliquer les articles
     - Utiliser array_unique(array_column($tableau, 'element')) pour récupérer les catégories/couleurs/tailles uniques (non dupliquées)
 */
+$articles = array(
+    array(
+        'nom' => 'Robe imprimée',
+        'categorie' => 'Robes',
+        'couleur' => 'Noir et blanc',
+        'taille' => 'M',
+        'prix' => 39.99,
+        'quantite' => 10,
+        'image' => 'https://picsum.photos/10/10'
+    ),
+    array(
+        'nom' => 'T-shirt rayé',
+        'categorie' => 'T-shirts',
+        'couleur' => 'Bleu et blanc',
+        'taille' => 'S',
+        'prix' => 19.99,
+        'quantite' => 5,
+        'image' => 'https://picsum.photos/10/10'
+    ),
+    array(
+        'nom' => 'Pantalon en toile',
+        'categorie' => 'Pantalons',
+        'couleur' => 'Kaki',
+        'taille' => 'L',
+        'prix' => 49.99,
+        'quantite' => 2,
+        'image' => 'https://picsum.photos/10/10'
+    ),
+    array(
+        'nom' => 'Robe de soirée',
+        'categorie' => 'Robes',
+        'couleur' => 'Noir',
+        'taille' => 'S',
+        'prix' => 79.99,
+        'quantite' => 3,
+        'image' => 'https://picsum.photos/10/10'
+    ),
+    array(
+        'nom' => 'Jupe en cuir',
+        'categorie' => 'Jupes',
+        'couleur' => 'Noir',
+        'taille' => 'M',
+        'prix' => 69.99,
+        'quantite' => 1,
+        'image' => 'https://picsum.photos/10/10'
+    ),
+    array(
+        'nom' => 'Chaussures à talons',
+        'categorie' => 'Chaussures',
+        'couleur' => 'Noir',
+        'taille' => '38',
+        'prix' => 89.99,
+        'quantite' => 4,
+        'image' => 'https://picsum.photos/10/10'
+    ),
+    array(
+        'nom' => 'Sac à main en cuir',
+        'categorie' => 'Sacs à main',
+        'couleur' => 'Marron',
+        'taille' => 'Unique',
+        'prix' => 59.99,
+        'quantite' => 6,
+        'image' => 'https://picsum.photos/10/10'
+    ),
+    array(
+        'nom' => 'Veste en cuir',
+        'categorie' => 'Vestes',
+        'couleur' => 'Noir',
+        'taille' => 'M',
+        'prix' => 129.99,
+        'quantite' => 2,
+        'image' => 'https://picsum.photos/10/10'
+    ),
+    array(
+        'nom' => 'Bottines en cuir',
+        'categorie' => 'Chaussures',
+        'couleur' => 'Marron',
+        'taille' => '39',
+        'prix' => 79.99,
+        'quantite' => 3,
+        'image' => 'https://picsum.photos/10/10'
+    ),
+    array(
+        'nom' => 'Pull en laine',
+        'categorie' => 'Pulls',
+        'couleur' => 'Bleu',
+        'taille' => 'M',
+        'prix' => 49.99,
+        'quantite' => 8,
+        'image' => 'https://picsum.photos/10/10'
+    ),
+    array(
+        'nom' => 'Chemisier en soie',
+        'categorie' => 'Chemisiers',
+        'couleur' => 'Blanc',
+        'taille' => 'S',
+        'prix' => 69.99,
+        'quantite' => 4,
+        'image' => 'https://picsum.photos/10/10'
+    )
+);
 ?>
