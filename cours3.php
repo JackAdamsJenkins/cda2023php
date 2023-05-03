@@ -166,4 +166,83 @@ echo "<br/>";
 $_SESSION["age"] = 36;
 
 echo "Ton âge : ".$_SESSION["age"];
+echo "<br/>";
+
+
+/*
+    Les fonctions
+        - Les fonctions déjà existantes
+        - La déclaration de vos propres fonctions
+
+        Les fonctions utilisateur en PHP permettent de créer des blocs de code réutilisables qui peuvent être appelés plusieurs fois au sein d'un script.
+
+    Déclarer une fonction :
+        - Sans argument : Pour déclarer la fonction sans argument. On utilise le mot-clé function suivi du nom de la fonction et de parenthèses vide. Le bloc de code va être délimité par des accolades
+*/
+function sayHello(){
+    echo "Hello world!";
+}
+/*
+    Déclarer une fonction :
+        - Avec arguments : Même chose que pour sans arguement, mais à la différence que dans les parenthèse, on y ajoute les arguments (des noms de variables), séparés par une virgule.
+*/
+function greeting($firstname, $lastname){
+    echo "Hello, $firstname $lastname !";
+}
+/*
+    Executer une fonction :
+        - Sans arguement : On appel simplement la fonction avec son nom suivi des parenthèses
+*/
+sayHello(); // Affichera "Hello world!"
+echo "<br/>";
+/*
+    Executer une fonction :
+        - Avec arguement : On appel la fonction en y introduisant les paramètres entre parenthèses
+*/
+greeting("Jean-Louis", "Errante"); // Affichera : "Hello, Jean-Louis ERRANTE !
+echo "<br/>";
+
+/*
+    Fonctions avec valeur de retour :
+        - On utilise le mot clé return
+        - Dès que le code execute l'instruction return, la fonction s'arrête
+
+    Vous pouvez avoir plusieurs "return" dans une fonction (dans un bloc de condition),
+    Mais dès qu'un retun est executé, la fonction est finie
+
+    function maFonction(){
+        $a = 1;
+
+        if($a == 0){
+            return false;
+        } else {
+            return true;
+        }
+
+        return "Autre chose; // Ne sera jamais exécuté
+    }
+*/
+function add($a, $b){
+    return $a + $b;
+}
+
+$result = add(8, 2); // $result = 10;
+echo "Le résultat du calcul : $result";
+echo "<br/>";
+
+/*
+    Fonction avec transmission d'argument optionnel
+    Pour les rendre optionnels, il faut définir une valeur par défaut dans les () de la fonction
+*/
+function greetOptional($firstname, $lastname = null){
+    if($lastname != null){
+        echo "Hello, $firstname $lastname";
+    } else {
+        echo "Hello, $firstname";
+    }
+}
+greetOptional("Jean-Louis");
+echo "<br/>";
+greetOptional("Jean-Louis", "Errante");
+
 ?>
