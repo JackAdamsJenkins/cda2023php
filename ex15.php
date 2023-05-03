@@ -1,4 +1,5 @@
-<?php 
+<?php
+session_start();
 /*
     Vous allez écrire deux pages :
         - Une contenant un formulaire de connexion
@@ -8,9 +9,6 @@
         - La deuxième page devra afficher :
             - Bonjour + identifiant
 */
-$login = "Toto";
-$mdp = "tata";
-
 // On test si l'utilisateur à bien renseigner toto et tata
 // Si ce n'est pas le cas, on indique que les données de connexion ne sont pas bonnes
 // Si c'est le cas, on fait disparaitre le formulaire
@@ -24,25 +22,49 @@ $mdp = "tata";
 // Infos : 
 // - Utilisez les variables de session pour cet exercice
 // - Ensuite, recommencez et utilisez les cookies
+
+
+$login = "Toto";
+$mdp = "tata";
+$message = null;
+$isLoggedIn = false;
+// On test si login et mdp sont renseignés
+if(!empty($_POST['login']) && !empty($_POST['password'])){
+    // On vérifie si login et mdp correspondent
+    if($_POST['login'] == $login && $_POST['password'] == $mdp){
+        $isLoggedIn = true;
+        $_SESSION['login'] = $_POST['login'];
+    } else {
+        $message = '<p style="color:red">Vous devez renseigner un login et un mdp valide</p>';
+    }
+}
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Connexion</title>
 </head>
 <body>
     <?php 
-        $a = "Toto";
-        if($a == "Toto"){
+    if($isLoggedIn == false){
     ?>
-    <h1>Mon contenu</h1>
-
+    <form action="#" method="post">
+        <input type="text" name="login" placeholder="login">
+        <input type="password" name="password" placeholder="Mot de passe">
+        <input type="submit" value="Connexion">
+    </form>
+    <?=$message; ?>
     <?php 
-        }
+    } // /!$isLoggedIn
+
+    if($isLoggedIn == true){ ?>
+    <h1>Bonjour <?=$_SESSION['login']; ?></h1>
+    <a href="ex15-2.php">Accéder à la deuxième page</a>
+    <?php 
+    } // /$isLoggedIn
     ?>
-    
 </body>
 </html>
