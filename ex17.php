@@ -2,6 +2,21 @@
 /*
     Vous allez créer un système d'inscription/connexion
 
+    Vous allez ajouter une navbar (header) qui sera sur un fichier séparé.
+    Cette navbar devra être ajoutée avec include ou require sur toutes les pages
+
+    Sur la navbar :
+        Si vous êtes connecté :
+            - Afficher :
+                - Déconnexion
+                - Mon profil
+        Si vous n'êtes pas connecté :
+            - Afficher :
+                - Connexion
+                - Inscription
+                
+    // A vous de voir comment gérer la déconnexion (suppression de cookie)
+
     Vous allez avoir :
         - Une page d'inscription, contenant :
             - Un formulaire avec login, mot de passe
