@@ -40,15 +40,60 @@
 
 */
 // Get the password hash from the cookie
-$stored_password_hash = $_COOKIE['password_hash'];
+// $stored_password_hash = $_COOKIE['password_hash'];
 
-// Verify the password
-if (password_verify($password, $stored_password_hash)) {
-    // Password is correct, redirect to the profile page
-    header('Location: profile.php');
-    exit;
-} else {
-    // Password is incorrect, show an error message
-    $error = 'Incorrect password';
+// // Verify the password
+// if (password_verify($password, $stored_password_hash)) {
+//     // Password is correct, redirect to the profile page
+//     header('Location: profile.php');
+//     exit;
+// } else {
+//     // Password is incorrect, show an error message
+//     $error = 'Incorrect password';
+// }
+
+$message = null;
+// On envoi le formulaire
+if(isset($_POST['submit'])){
+    // On vérifie si les données login et pass sont renseignées
+    if(!empty($_POST['login']) && !empty($_POST['pass'])){
+        // Les données sont renseignées, on vérifie la correspondance
+        $loginCookie = $_COOKIE['login'];
+        $passCookie = $_COOKIE['pass'];
+
+        // Si login et pass correspondent
+        if($loginCookie == $_POST['login'] &&
+            password_verify($_POST['pass'], $passCookie)
+        ) {
+            // On se connect
+            setcookie('isLoggedIn', true, time()+3600); // On se connecte pour une heure
+
+            // Redirection sur la page profil
+            header('Location: profil.php');
+        } else {
+            $message = '<p style="color:red">Les identifiants ne correspondent pas</p>';
+        }
+    } else {
+        $message = '<p style="color:red">Vous devez renseigner tous les champs.</p>';
+    }
 }
 ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+</head>
+<body>
+    <?php include_once('header.php'); ?>
+    <h1>Connexion</h1>
+    <?=$message ?>
+    <form action="#" method="post">
+        <input type="text" name="login" placeholder="Identifiant">
+        <input type="password" name="pass" placeholder="Mot de passe">
+        <input type="submit" value="Connexion" name="submit">
+    </form>
+</body>
+</html>
