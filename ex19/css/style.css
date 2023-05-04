@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
+header {
+    display: grid;
+    grid-template-columns: 60px auto;
+    column-gap: 20px;
+    max-width: 1440px;
+    margin: auto;
+    margin-top: 30px;
+}
+    header img {
+        max-width: 60px;
+    }
+    header ul {
+        text-align: right;
+    }
+    header nav {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+        header li {
+            display: inline;
+            padding:8px;
+        }
+            header nav a {
+                font-family: 'Work Sans', sans-serif;
+                font-weight: 300;
+                font-size: 16px;
+                color: #333;
+                text-decoration: none;
+            }
+            header nav a:hover {
+                color:#000;
+            }
+
+
+section {
+    max-width: 1440px;
+    margin:64px auto;
+
+}
+    section h1,
+    section p {
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 300;
+        font-size: 32px;
+        color: #333;
+        text-align: center;
+    }
+
+    section hr {
+        max-width: 80px;
+        margin-top: 32px;
+    }
+
+#images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:42px;
+}
+
+#images img {
+    max-width: 100%;
+    width: 100%;
+}
+
+
+section a {
+    color: #697686;
+    text-decoration: none;
+}
+
+/* Footer */
+
+footer {
+    padding-top: 62px;
+    border-top: 2px solid black;
+}
+
+footer,
+footer a {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    color: #333;
+}
+    #firstpart,
+    #lastpart {
+        max-width: 1440px;
+        margin: auto;
+    }
+
+    #firstpart a {
+        text-decoration: none;
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    footer img {
+        max-width: 64px;
+    }
+
+    #firstpart {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);;
+    }  
+    
+    #firstpart p {
+        line-height: 32px;
+    }
+
+    #lastpart {
+        display: grid;
+        grid-template-columns: 50% auto;
+        margin-top: 64px;
+    }
+
+    #lastpart img {
+        max-width: 28px;
+    }
+
+    #lastpart a {
+        margin-right: 12px;
+    }
+
+@media screen and (max-width: 1440px) {
+    header {
+        margin-left:8px;
+        margin-right: 8px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        margin-left:16px;
+        margin-right: 16px;
+    }
+
+    section h1,
+    section p {
+       font-size: 20px;
+    }
+
+    #images {
+        grid-template-columns: repeat(2, 1fr);
+        gap:21px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #images {
+        grid-template-columns: repeat(1, 1fr);
+        gap:10px;
+    }
+}
