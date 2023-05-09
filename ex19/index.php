@@ -1,9 +1,25 @@
+<?php 
+    // Inclure l'appel à la base de données
+    require_once('includes/connect.php');
+
+    // Faire la requête pour récuperer le titre et la description
+    $requete = $db->prepare('SELECT title_site as title, description_site as description FROM site WHERE id_site = :id');
+
+    $id = 1;
+    $requete->execute(array(
+        'id' => $id
+    ));
+
+    // On lance le fetch pour récupérer les données
+    $data = $requete->fetch();
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <!-- Meta important pour le responsive -->
-    <title>magnet Studio page d'accueil</title>
+    <title><?=$data['title']?> - Page d'accueil</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <?php 
@@ -13,14 +29,19 @@
 <body>
 
     <!-- inclure le header -->
+    <?php 
+        include_once('header.php');
+    ?>
 
     <section>
         <h1>
             <!-- Le titre du site doit être récupéré de la base de données -->
+            <?=$data['title']?>
         </h1>
         <hr />
         <p>
             <!-- Un petit texte doit descriptif doit également être récupéré de la base de données -->
+            <?=$data['description']?>
         </p>
     </section>
 
@@ -42,6 +63,8 @@
     </section>
 
     <!-- include le footer -->
-
+    <?php 
+        include_once('footer.html');
+    ?>
 </body>
 </html>

@@ -8,26 +8,27 @@ session_start();
 
     Quelques variables superglobales :
 
-    $_GET : Contient les données envoyées via la méthode GET
-    Accessibles par : $_GET['nomDeLaDonnee']
+$_GET : Contient les données envoyées via la méthode GET
+Accessibles par : $_GET['nomDeLaDonnee']
 
-    $_POST : Contient les données via la méthode POST
-    Accessibles par : $_POST['nomDeLaDonnee']
+$_POST : Contient les données via la méthode POST
+Accessibles par : $_POST['nomDeLaDonnee']
 
-    $_COOKIE : Contient les données des cookies envoyées par le navigateur.
-    Accesibles par : $_COOKIE['nomDeLaDonnee']
+$_COOKIE : Contient les données des cookies envoyées par le navigateur.
+Accesibles par : $_COOKIE['nomDeLaDonnee']
 
-    $_FILES : Contient les informations sur les fichiers uploadés via un formulaire et la méthode POST
-    pour l'upload, on doit ajouter un nouvel attribut sur les formulaires : enctype="multipart/form-data"
-    Accessibles par : $_FILES['nomDuFichier']
+$_FILES : Contient les informations sur les fichiers uploadés via un formulaire et la méthode POST
+pour l'upload, on doit ajouter un nouvel attribut sur les formulaires : 
+enctype="multipart/form-data"
+Accessibles par : $_FILES['nomDuFichier']
 
-    $_SERVER : Contient des données sur l'environnement de développement
+$_SERVER : Contient des données sur l'environnement de développement
 
-    $_SESSION : Contient les données des sessions de l'utilisateur
-    Accessibles par $_SESSION['nomDeLaDonnee']
+$_SESSION : Contient les données des sessions de l'utilisateur
+Accessibles par $_SESSION['nomDeLaDonnee']
 
-    $_REQUEST : Contient les données combinées de $_GET, $_POST, $_COOKIE
-    On ne doit pas s'en servir, il vaut mieux utiliser $_GET, $_POST et $_COOKIE
+$_REQUEST : Contient les données combinées de $_GET, $_POST, $_COOKIE
+On ne doit pas s'en servir, il vaut mieux utiliser $_GET, $_POST et $_COOKIE
 
     $_ENV : Contient les variables d'environnement du serveur
     Accessibles par $_ENV['NomDeLaDonnee'];
@@ -35,18 +36,18 @@ session_start();
 */
 
 /*
-    Les constantes
+Les constantes
 
-    Sont des données stockées qui ne changent pas.
+Sont des données stockées qui ne changent pas.
 
-    Pour définir une constante :
-     - define('NOMDELACONSTANTE', 'Valeur de la constante')
+Pour définir une constante :
+    - define('NOMDELACONSTANTE', 'Valeur de la constante')
 
-    Pour utiliser une constante :
-    NOMDELACONSTANTE
+Pour utiliser une constante :
+NOMDELACONSTANTE
 
-    Par convention, les constantes sont écrites en MAJUSCULE
-    Les constantes n'ont pas de $ devant leur nom
+Par convention, les constantes sont écrites en MAJUSCULE
+Les constantes n'ont pas de $ devant leur nom
 */
 define('PI', 3.14159);
 
@@ -57,13 +58,13 @@ echo "<br/>";
 */
 
 /*
-    PHP possède des constantes qui sont déjà prédéfinies
-    PHP_VERSION => Connaître la version de PHP
-    DIRECTORY_SEPARATOR => Le caractère séparateur du répertoire du système d'exploitation
+PHP possède des constantes qui sont déjà prédéfinies
+PHP_VERSION => Connaître la version de PHP
+DIRECTORY_SEPARATOR => Le caractère séparateur du répertoire du système d'exploitation
 
-    La portée d'une constante est globale. 
-    On peut y accéder sur tout le script.
-    On peut utiliser les constantes dans les fonctions
+La portée d'une constante est globale. 
+On peut y accéder sur tout le script.
+On peut utiliser les constantes dans les fonctions
 */
 
 /*
@@ -117,11 +118,11 @@ echo "<br/>";
 */
 
 /*
-    Les cookies permettent d'enregistrer des données pendant X temps
-    X = à vous de choisir la durée pendant laquelle vous souhaitez stocker les données
-    -- Les cookies sont stockés sur la machine de l'utilisateur
-    Ils ne sont PAS enregistrés sur le serveur web
-    Ils ne sont PAS enregistrés sur votre site
+Les cookies permettent d'enregistrer des données pendant X temps
+X = à vous de choisir la durée pendant laquelle vous souhaitez stocker les données
+-- Les cookies sont stockés sur la machine de l'utilisateur
+Ils ne sont PAS enregistrés sur le serveur web
+Ils ne sont PAS enregistrés sur votre site
 
     Les cookies sont UNIQUEMENT déposés sur la machine de l'utilisateur
     Les cookies sont accessibles uniquement par le site web qui les a déposé
@@ -149,19 +150,19 @@ echo "Ton nom c'est : ".$_COOKIE['nom'];
 echo "<br/>";
 
 /*
-    Les variables de sessions :
-        - Stocker les données sur le serveur web de manière temporaire
-        - S'effacent automatiquement à la fermeture du navigateur
-        - Son persistantes entre les différentes pages de votre
-        - Un autre site ne peut PAS y avoir accès
+Les variables de sessions :
+    - Stocker les données sur le serveur web de manière temporaire
+    - S'effacent automatiquement à la fermeture du navigateur
+    - Son persistantes entre les différentes pages de votre
+    - Un autre site ne peut PAS y avoir accès
 
-    Pour utiliser les sessions, vous devez ABSOLUEMENT déclarer une fois par page :
-    session_start()
+Pour utiliser les sessions, vous devez ABSOLUEMENT déclarer une fois par page :
+session_start()
 
-    Cette fonction permet de dire à votre programme que vous allez utiliser les sessions.
-    ATTENTION : la déclaration du début dession doit se faire AVANT TOUT CODE HTML
+Cette fonction permet de dire à votre programme que vous allez utiliser les sessions.
+ATTENTION : la déclaration du début dession doit se faire AVANT TOUT CODE HTML
 
-    La déclaration des variables de sessions et leur utilisation se fait comme un tableau associatif classique
+La déclaration des variables de sessions et leur utilisation se fait comme un tableau associatif classique
 */
 $_SESSION["age"] = 36;
 
@@ -176,29 +177,25 @@ echo "<br/>";
 
         Les fonctions utilisateur en PHP permettent de créer des blocs de code réutilisables qui peuvent être appelés plusieurs fois au sein d'un script.
 
-    Déclarer une fonction :
-        - Sans argument : Pour déclarer la fonction sans argument. On utilise le mot-clé function suivi du nom de la fonction et de parenthèses vide. Le bloc de code va être délimité par des accolades
 */
+
+// Déclarer une fonction :
+// - Sans paramètre : Pour déclarer la fonction sans paramètre. On utilise le mot-clé function suivi du nom de la fonction et de parenthèses vide. Le bloc de code va être délimité par des accolades
 function sayHello(){
     echo "Hello world!";
 }
-/*
-    Déclarer une fonction :
-        - Avec arguments : Même chose que pour sans arguement, mais à la différence que dans les parenthèse, on y ajoute les arguments (des noms de variables), séparés par une virgule.
-*/
+
+// Déclarer une fonction :
+//     - Avec paramètres : Même chose que pour sans paramètre, mais à la différence que dans les parenthèse, on y ajoute les paramètres (des noms de variables), séparés par une virgule.
 function greeting($firstname, $lastname){
     echo "Hello, $firstname $lastname !";
 }
-/*
-    Executer une fonction :
-        - Sans arguement : On appel simplement la fonction avec son nom suivi des parenthèses
-*/
+// Executer une fonction :
+//   - Sans paramètre : On appel simplement la fonction avec son nom suivi des parenthèses
 sayHello(); // Affichera "Hello world!"
 echo "<br/>";
-/*
-    Executer une fonction :
-        - Avec arguement : On appel la fonction en y introduisant les paramètres entre parenthèses
-*/
+// Executer une fonction :
+//   - Avec paramètre : On appel la fonction en y introduisant les arguments entre parenthèses
 greeting("Jean-Louis", "Errante"); // Affichera : "Hello, Jean-Louis ERRANTE !
 echo "<br/>";
 
@@ -219,7 +216,7 @@ echo "<br/>";
             return true;
         }
 
-        return "Autre chose; // Ne sera jamais exécuté
+        return "Autre chose"; // Ne sera jamais exécuté
     }
 */
 function add($a, $b){
@@ -230,10 +227,9 @@ $result = add(8, 2); // $result = 10;
 echo "Le résultat du calcul : $result";
 echo "<br/>";
 
-/*
-    Fonction avec transmission d'argument optionnel
-    Pour les rendre optionnels, il faut définir une valeur par défaut dans les () de la fonction
-*/
+
+// Fonction avec transmission d'argument optionnel
+// Pour les rendre optionnels, il faut définir une valeur par défaut dans les () de la fonction
 function greetOptional($firstname, $lastname = null){
     if($lastname != null){
         echo "Hello, $firstname $lastname";

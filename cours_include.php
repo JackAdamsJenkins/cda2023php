@@ -39,7 +39,6 @@
 <body>
     <?php 
         require_once "includes/header.html";
-
     ?>
     <main>
         <h1>Mon contenu principal</h1>
