@@ -10,6 +10,7 @@
 </head>
 <body>
     <!-- Inclure le header -->
+    <?php include_once('header.php'); ?>
     <section>
         <h1>Page de contact</h1>
         <!-- Ajouter un formulaire de contact qui enregistrera les données en BDD -->
@@ -17,6 +18,6 @@
     </section>
     
     <!-- Inclure le footer -->
-
+    <?php include_once('footer.html'); ?>
 </body>
 </html>

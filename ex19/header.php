@@ -13,10 +13,14 @@
                         ALORS afficher le lien "Retour à l'accueil"
                     SINON
                         Affiche le lien contact
-
-                    
                 */
-               
+
+                // Récupérer l'url 
+               if(basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']) == "contact.php"){
+                    echo '<li><a href="/cda2023/ex19">Retour à l\'accueil</a></li>';
+               } else {
+                    echo '<li><a href="contact.php">Contact</a></li>';
+               }
 
             ?>
 

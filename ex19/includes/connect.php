@@ -1,10 +1,11 @@
 <?php 
 // Connexion à la base de données
 try {
+    require_once('config.php');
     $db = new PDO(
-        'mysql:host=localhost;dbname=cda2023magnet;charset=utf8',
-        'utilisateur',
-        'motdepasse',
+        'mysql:host='.$_ENV['server'].';dbname='.$_ENV['dbname'].';charset='.$_ENV['encoding'],
+        $_ENV['username'],
+        $_ENV['password'],
         [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION // Active la gestion des erreurs
         ]

@@ -70,6 +70,35 @@ section a {
     text-decoration: none;
 }
 
+/* Formulaire ajout article */
+form {
+    display: grid;
+    max-width: 600px;
+    margin: auto;
+    gap: 24px;
+    margin-top: 24px;
+}
+    input[type="text"] {
+        min-height: 40px;
+    }
+    input[type="submit"] {
+        background: none;
+        height: 50px;
+        text-transform: uppercase;
+    }
+
+    input[type="submit"]:hover {
+        background:#000;
+        color:#fff;
+        cursor: pointer;
+    }
+.error {
+    color:red;
+}
+.success {
+    color:green;
+}
+
 /* Footer */
 
 footer {
