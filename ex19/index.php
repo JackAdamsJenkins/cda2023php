@@ -13,6 +13,12 @@
     // On lance le fetch pour récupérer les données
     $data = $requete->fetch();
 
+    // Récupérer les 6 derniers articles
+    $req = $db->prepare('SELECT * from article ORDER BY id_article DESC LIMIT 0, 6');
+
+    $req->execute();
+
+    $articles = $req->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -45,8 +51,21 @@
         </p>
     </section>
 
-    <section>
+    <section class="article">
         <!-- Vous devez afficher les 6 derniers articles enregistré dans votre BDD -->
+       <?php 
+        foreach($articles as $article){ ?>
+
+        <article>
+            <a href="article.php?id=<?=$article['id_article']?>">
+                <img src="uploads/<?=$article['image_article']?>" alt="">
+                <h2><?=$article['title_article']?></h2>
+                <p><?=substr($article['content_article'], 0, 50)?></p>
+            </a>
+        </article>
+            
+       <?php }
+       ?> 
     </section>
     
     <section id="images">

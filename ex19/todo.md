@@ -29,7 +29,7 @@ Créez la page qui permet d'effectuer les modifications d'un article
 
 
 ********************************
-Si vous êtes connecté, faites en sorte que le menu afficher le lien "Déconnexion"
+Si vous êtes connecté, faites en sorte que le menu affiche le lien "Déconnexion"
 
 
 ********************************

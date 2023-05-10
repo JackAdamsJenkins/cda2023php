@@ -6,7 +6,16 @@
             <li><a href="#">Projects</a></li>
             <li><a href="#">Our Studio</a></li>
             <li><a href="#">Blog</a></li>
-
+            <?php 
+                $isUserConnected = isset($_COOKIE['user']) ? $_COOKIE['user'] : null;
+                if($isUserConnected != null){
+                    // L'utilisateur est connecté, on le redirige sur la page d'accueil
+                    echo '<li><a href="connexion.php?logout=true">Déconnexion</a></li>';
+                } else {
+                    echo '<li><a href="connexion.php">Connexion</a></li>';
+                }
+            
+            ?>
             <?php
                 /*
                     Si la page est contact.php

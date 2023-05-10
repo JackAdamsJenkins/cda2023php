@@ -78,7 +78,9 @@ form {
     gap: 24px;
     margin-top: 24px;
 }
-    input[type="text"] {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
         min-height: 40px;
     }
     input[type="submit"] {
@@ -97,6 +99,38 @@ form {
 }
 .success {
     color:green;
+}
+
+label img {
+    max-height: 50px;
+}
+
+
+/* Mise en forme articles page accueil */
+section.article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+    margin-bottom: 50px;
+}
+section.article img {
+    max-width: 100%;
+    max-height: 200px;
+    display: block;
+    margin: auto;
+}
+
+section.article h2 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+}
+
+section.article p {
+    font-size: 16px;
+    margin-top: 12px
 }
 
 /* Footer */
