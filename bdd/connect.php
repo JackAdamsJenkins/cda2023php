@@ -2,6 +2,7 @@
 // Connexion à la base de données
 try {
     $db = new PDO(
+        // Connexion à la base de données existante utilisée pour l'exercice 19 (cda2023magnet.sql.gz)
         'mysql:host=localhost;dbname=cda2023;charset=utf8',
         'utilisateur',
         'motdepasse',
