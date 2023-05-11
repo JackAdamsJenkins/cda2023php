@@ -3,6 +3,7 @@ class contactModel {
     private $db;
     
     public function __construct(){
+        // Connexion à la base de données existante utilisée pour l'exercice 19 (cda2023magnet.sql.gz)
         $this->db = new PDO('mysql:host=localhost;dbname=cda2023magnet;charset=utf8',
             'utilisateur',
             'motdepasse',
